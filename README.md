@@ -26,12 +26,25 @@ in the README about what they do *not* do.
 All five are dependency-free and documented with the reasoning, the measured
 numbers, and a **Known limits** section.
 
+### Competitions — now with the code
+
+**[radarml-track2](https://github.com/Anes-Hadim/radarml-track2)** · *1st place,
+Synapson Datathon (IEEE)* — radar modulation classification across 13 SNRs on
+UCL ARESTOR recordings. I built two pipelines and **submitted the one that
+scored worse**: a Fourier template bank hit 0.9962 balanced accuracy but was
+perfect at every SNR from −25 dB up, which is physically implausible below the
+noise floor. It had 660 templates for the dataset's 660 configurations — it was
+re-identifying source recordings, not classifying modulation. The rejected code
+is in the repo so the reasoning can be checked.
+
+**[riverload-c2](https://github.com/Anes-Hadim/riverload-c2)** · *2nd place,
+Odyssia Datathon* — forecast the Rhine's depth, then load a ship. The forecast
+is a constraint generator, not the deliverable, so the loss is asymmetric:
+quantile LightGBM on pinball loss, three blended forecasters, forward-only
+backtesting, and a MILP for cargo under mass, trim and deadline constraints.
+
 ### Elsewhere
 
-- **1st place** — Synapson Datathon (IEEE), radar signal classification into
-  seven modulation types on a UCL dataset
-- **2nd place** — Odyssia Datathon: Rhine depth forecasting + ship-loading
-  optimisation, and breast tumour segmentation from ultrasound
 - Infrastructure &amp; deployment internship — Ubuntu Server, Nginx reverse
   proxy, MariaDB for a three-tier application
 - Cisco CCNA — Switching, Routing and Wireless Essentials
